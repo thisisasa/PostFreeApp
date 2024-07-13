@@ -1,7 +1,9 @@
 package com.asa.postfreeapp.api;
 
+import com.asa.postfreeapp.models.requests.LoginRequest;
 import com.asa.postfreeapp.models.requests.RegisterRequest;
 import com.asa.postfreeapp.models.response.BaseResponse;
+import com.asa.postfreeapp.models.response.LoginResponse;
 import com.asa.postfreeapp.models.response.PostResponse;
 import com.asa.postfreeapp.models.response.PostsItem;
 
@@ -19,4 +21,6 @@ public interface ApiInterface {
 
     @POST("/api/oauth/register")
     Call<BaseResponse<String>> registerUser(@Body RegisterRequest request);
+    @POST("/api/oauth/token")
+    Call<LoginResponse> loginUser(@Body LoginRequest request);
 }
